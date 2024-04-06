@@ -12,22 +12,6 @@ const AnecdoteForm = () => {
       const anecdotes = queryClient.getQueryData(['anecdotes'])
       queryClient.setQueryData(['anecdotes'], anecdotes.concat(newAnecdote))
       // queryClient.invalidateQueries({ queryKey: ['anecdotes'] })
-      dispatch({
-        type: "CREATE",
-        payload: {newAnecdote}
-      })
-      setTimeout(() => {
-        dispatch({})
-      }, 3000)
-    },
-    onError: () => {
-      dispatch({
-        type: "ERROR"
-      })
-      setTimeout(() => {
-        dispatch({})
-      }, 3000)
-    
     }
     
    })
